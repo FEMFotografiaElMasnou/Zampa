@@ -1831,6 +1831,7 @@ export default function App() {
                     ) : (
                       <ZampaParticipant
                         currentEdition={activeZampaEdition}
+                        editions={zampaEditions}
                         projects={zampaProjects}
                         userRanks={zampaUserRanks}
                         currentUser={session.user}
