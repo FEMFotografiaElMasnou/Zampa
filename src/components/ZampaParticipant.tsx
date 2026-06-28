@@ -303,35 +303,41 @@ export default function ZampaParticipant({
 
       {/* Pestanyes de Navegació de Resultats (Només si està tancat o finalitzat) */}
       {(selectedEdition.status === 'closed' || selectedEdition.status === 'finished') && (
-        <div className="flex border-b border-brand-border/60 max-w-xl mx-auto justify-center gap-2 mb-2">
-          <button
-            onClick={() => setSelectedTab('results_gallery')}
-            className={`px-5 py-3 text-xs sm:text-sm font-black uppercase tracking-wider transition-all border-b-2 -mb-[1px] cursor-pointer flex items-center gap-2 ${
-              selectedTab === 'results_gallery'
-                ? 'border-[#81a2cc] text-[#81a2cc]'
-                : 'border-transparent text-brand-text-muted hover:text-brand-text'
-            }`}
-          >
-            <span>🖼️</span>
-            {selectedEdition.status === 'finished' 
-              ? (lang === 'es' ? 'Ganador y Galería' : 'Guanyador i Galeria')
-              : (lang === 'es' ? 'Galería de Proyectos' : 'Galeria de Projectes')
-            }
-          </button>
-          <button
-            onClick={() => setSelectedTab('consensus_rankings')}
-            className={`px-5 py-3 text-xs sm:text-sm font-black uppercase tracking-wider transition-all border-b-2 -mb-[1px] cursor-pointer flex items-center gap-2 ${
-              selectedTab === 'consensus_rankings'
-                ? 'border-[#81a2cc] text-[#81a2cc]'
-                : 'border-transparent text-brand-text-muted hover:text-brand-text'
-            }`}
-          >
-            <span>📊</span>
-            {selectedEdition.status === 'finished'
-              ? (lang === 'es' ? 'Diana y Travessa' : 'La Diana i la Travessa')
-              : (lang === 'es' ? 'La Travessa de la FEM' : 'La Travessa de la FEM')
-            }
-          </button>
+        <div className="flex justify-center mb-10 px-4">
+          <div className="bg-surface1 border-2 border-brand-border-high/80 p-1.5 rounded-2xl flex flex-wrap sm:flex-nowrap gap-1.5 shadow-xl max-w-full sm:w-auto">
+            <button
+              onClick={() => setSelectedTab('results_gallery')}
+              className={`px-6 py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-xl cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-200 active:scale-95 w-full sm:w-auto ${
+                selectedTab === 'results_gallery'
+                  ? 'bg-[#81a2cc] text-slate-950 shadow-md font-black'
+                  : 'text-brand-text-muted hover:text-white hover:bg-surface2/60'
+              }`}
+            >
+              <span className="text-sm">🖼️</span>
+              <span>
+                {selectedEdition.status === 'finished' 
+                  ? (lang === 'es' ? 'Ganador y Galería' : 'Guanyador i Galeria')
+                  : (lang === 'es' ? 'Galería de Proyectos' : 'Galeria de Projectes')
+                }
+              </span>
+            </button>
+            <button
+              onClick={() => setSelectedTab('consensus_rankings')}
+              className={`px-6 py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-xl cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-200 active:scale-95 w-full sm:w-auto ${
+                selectedTab === 'consensus_rankings'
+                  ? 'bg-[#81a2cc] text-slate-950 shadow-md font-black'
+                  : 'text-brand-text-muted hover:text-white hover:bg-surface2/60'
+              }`}
+            >
+              <span className="text-sm">📊</span>
+              <span>
+                {selectedEdition.status === 'finished'
+                  ? (lang === 'es' ? 'Diana y Travessa' : 'La Diana i la Travessa')
+                  : (lang === 'es' ? 'La Travessa de la FEM' : 'La Travessa de la FEM')
+                }
+              </span>
+            </button>
+          </div>
         </div>
       )}
 
